@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Interest Vue.js</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="vue.js"></script>
+</head>
+<body>
+
+
+    <div id="appjs" class="container">
+        <div class="form-group">
+            <span class="text">Simple Interest Calculator Using Vue.js</span> <br><br>
+        <input type="text"  class="input" v-model.number="principal" placeholder="Enter Principal"> <br><br>
+        <input type="text"  class="input"  v-model.number="rate" placeholder="Enter Rate"> <br><br>
+        <input type="text"  class="input" v-model.number="time" placeholder="Enter Time"> 
+        
+        <br>
+        <hr>
+
+        <div class="result">
+        <span class="text">The Simple Interest is: {{ simpleInterst }}</span>
+        </div>
+    </div>
+    </div>
+
+    
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+    <script>
+        new Vue({
+
+el:'#appjs',
+
+data:{
+   principal:'',
+    rate:'',
+    time:''
+   
+},
+computed: {
+
+    simpleInterst() {
+        let p = this.principal;
+        let r = this.rate;
+        let t = this.time;
+        return ((p * r * t) / 100)
+    }
+},
+
+// watch: {
+//     result: function(value){
+//         var vm = this;
+//         setTimeout(function(){
+//             vm.result=0;
+//         }, 5000);
+//     }
+
+    
+// }
+})
+
+    </script>
+</body>
+</html>
